@@ -1,7 +1,8 @@
 #include <windows.h>
 #include <shlobj.h>
 #include <stdio.h>
-#include "infect.h"
+
+#include "startup_folders.h"
 
 void infect(){
     puts("Trigger infection");
@@ -63,3 +64,5 @@ int Copy2Startup(){
 
     return (c1 == 0 || c2 == 0)? 0 : -1;
 }
+
+
