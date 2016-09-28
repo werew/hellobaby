@@ -1,4 +1,4 @@
-# hellobaby
+# Hellobaby - Work in progress 
 
 
 **The code in this repository is only for learning purposes, 
@@ -8,9 +8,10 @@ your own risk ;)**
 
 ## Introduction
 
-While studing how malwares work I realized that writing one on my own would be
-a very good way to learn: *hellobaby* is my personal attempt to create a simple
-multi-functional malware.
+While studing how malwares work I tought that writing one on my own would be
+a very good way to learn: *hellobaby* is my personal attempt to create a
+polymorphic malware which would cover all the most common answers to the
+question "What does a malware do?".
 
 I will try to document very well every part of this project.
 
@@ -25,6 +26,9 @@ The principales goals are to get a better view on:
 For this *hellobaby* is composed by different modules, each of them
 implementing a different technique to perform a certain task (e.g. spreading,
 evasion techniques).
+
+Yes, *hellobaby* is modular, this means you can choose which modules activate
+and which not. 
 
 
 
