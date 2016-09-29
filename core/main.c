@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "core.h"
 
 /**
@@ -29,16 +30,19 @@ int main(void){
      
     #if defined NB_MODULES && defined ENTP_LIST
 
-    struct Mod** mst_list[NB_MODULES];
+    struct ModStat* mst_list[NB_MODULES];
 
-    int (*entrypoints[NB_MODULES])
-        (struct ModStatus** mst) = { ENTP_LIST };
+    ModEntry entrypoints[NB_MODULES] = { ENTP_LIST };
 
     #else
 
         #error "NB_MODULES and ENTP_LIST not defined"
 
     #endif
+
+    if ( launch(entrypoints,mst_list, NB_MODULES) == -1){
+        fprintf(stderr,"Fail");
+    }
 
 
 }

