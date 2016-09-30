@@ -1,0 +1,20 @@
+
+
+# Directory of this file
+TOPDIR_  := $(dir $(lastword $(MAKEFILE_LIST)))
+BASEDIR_ := $(TOPDIR_)/..
+
+include $(BASEDIR_)/project.mk
+
+CC       = gcc
+CFLAGS   = -Wall -Wextra
+OBJDIR   = obj
+INCDIR   = include
+SRCDIR   = src
+INCLUDES = $(BASEDIR_)/core/include
+
+# This variables will expand automatically
+SOURCES := $(wildcard $(SRCDIR)/*.c)
+OBJECTS := $(SOURCES:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
+
+

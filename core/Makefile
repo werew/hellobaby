@@ -1,8 +1,5 @@
 
-ifndef MODULES
-	$(error MODULES is not set)
-endif
-
+include ../config/Makefile.common
 
 NB_MODULES = $(words $(MODULES))
 ENTP_LIST  = $(subst /,_,$(MODULES:%=launch_%,))
@@ -17,10 +14,16 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c $(INCDIR)/includes.h
 			  	    -D ENTP_LIST="$(ENTP_LIST)"   \
 				    -I "$(INCDIR)" -c $< -o $@
 
-.PHONY: include/includes.h
-include/includes.h:
+
+# TODO use absolute path for includes, so that modules can
+# use each other public functions (maybe)
+.PHONY: $(INCDIR)/includes.h
+$(INCDIR)/includes.h:
 	@echo "$(MODULES)" | tr ' ' '\n' | \
 	sed 's~\([^/]*\)/\([^/]*\)~#include "../../\1/\2/include/\2.h"~' \
 	> $@
+
+clean:
+	rm -f $(OBJDIR)/*.o $(INCDIR)/includes.h
 
 
