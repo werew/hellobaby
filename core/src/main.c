@@ -44,6 +44,7 @@ int main(void){
         fprintf(stderr,"Fail");
     }
 
+    return 0;
 
 }
     
