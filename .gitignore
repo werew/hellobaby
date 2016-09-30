@@ -31,3 +31,9 @@
 # Debug files
 *.dSYM/
 *.su
+
+# Vim swap files
+*.swp
+
+# Dynamic include files
+core/include/includes.h
