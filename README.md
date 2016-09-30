@@ -31,5 +31,25 @@ Yes, *hellobaby* is modular, this means you can choose which modules activate
 and which not. 
 
 
+## Writing a module - 
+
+To write a new module you just need to follow few rules:
+- put it in the appropriate section
+- the name of the directory will be the name of the module, it can only
+  contain alphanumeric caracters and underscores
+- you need to define a function called `launch_<name of the module>`,
+  it will be the entry point of your module
+- keep your header files inside a folder include/, create an header file
+  named `<name of the module>.h`. Your entry point function must be
+  declared here
+- after build, the compiled module must be a file inside the folder
+  obj, named `<name of the module>.o`
+
+
+
+
+
+
+
 
 
