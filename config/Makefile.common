@@ -17,6 +17,7 @@ INCLUDES = $(BASEDIR_)/core/include
 # Contains the name of the current directory
 # that correspond to the name of the module
 MODNAME  = $(notdir $(abspath .))
+MODOUT   = $(OBJDIR)/$(MODNAME).o
 
 # This variables will expand automatically
 SOURCES := $(wildcard $(SRCDIR)/*.c)
