@@ -37,3 +37,6 @@
 
 # Dynamic include files
 core/include/includes.h
+
+# Dependencies genereted at build-time
+*.d
