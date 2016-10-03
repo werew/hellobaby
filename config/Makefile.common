@@ -13,6 +13,11 @@ INCDIR   = include
 SRCDIR   = src
 INCLUDES = $(BASEDIR_)/core/include
 
+# ONLY FOR MODULES
+# Contains the name of the current directory
+# that correspond to the name of the module
+MODNAME  = $(notdir $(abspath .))
+
 # This variables will expand automatically
 SOURCES := $(wildcard $(SRCDIR)/*.c)
 OBJECTS := $(SOURCES:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
