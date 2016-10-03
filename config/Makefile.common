@@ -7,7 +7,7 @@ BASEDIR_ := $(TOPDIR_)/..
 include $(BASEDIR_)/project.mk
 
 CC       = i686-w64-mingw32-gcc
-CFLAGS   = -Wall -Wextra
+CFLAGS   = -Wall -Wextra -MD
 OBJDIR   = obj
 INCDIR   = include
 SRCDIR   = src
@@ -22,5 +22,6 @@ MODOUT   = $(OBJDIR)/$(MODNAME).o
 # This variables will expand automatically
 SOURCES := $(wildcard $(SRCDIR)/*.c)
 OBJECTS := $(SOURCES:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
+DEPS    := $(OBJECTS:%.o=%.d)
 
 
