@@ -6,7 +6,7 @@ BASEDIR_ := $(TOPDIR_)/..
 
 include $(BASEDIR_)/project.mk
 
-CC       = gcc
+CC       = i686-w64-mingw32-gcc
 CFLAGS   = -Wall -Wextra
 OBJDIR   = obj
 INCDIR   = include
