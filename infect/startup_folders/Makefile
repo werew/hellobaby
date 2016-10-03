@@ -9,6 +9,8 @@ $(MODOUT): $(SOURCES)
 	mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c $? -o $@
 
+clean:
+	rm -f $(MODOUT)
 
 
 
