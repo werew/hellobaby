@@ -1,3 +1,7 @@
 
-build:
-	@echo "Build startup_folders"
+include ../../config/Makefile.common
+
+
+$(MODOUT).o: $(SOURCES)
+	$(CC) $(CFLAGS) -c $@ $? 
+

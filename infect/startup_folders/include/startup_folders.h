@@ -5,8 +5,6 @@
 #include "core.h"
 
 int launch_infect_startup_folders(struct ModStat**);
-int CopySelf2Dir(char* path);
-int Copy2Startup();
 
 
 #endif

